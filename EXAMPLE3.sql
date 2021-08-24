@@ -1,0 +1,11 @@
+--모든 부서 정보, 사원 정보, 급여 정보, 각 사원의 직속 상관의 정보를 부서번호, 사원 번호 순서로 정렬하여 출력해보세요
+
+ SELECT D.DEPTNO, D.DNAME 
+    , E.EMPNO, E.ENAME, E.MGR, E.SAL, E.DEPTNO
+    , S.LOSAL, S.HISAL, S.GRADE
+    , E2.EMPNO AS MGR_EMPNO, E2.ENAME AS MGR_ENAME
+FROM EMP E, DEPT D, SALGRADE S, EMP E2
+WHERE D.DEPTNO = E.DEPTNO(+)
+    AND E.SAL BETWEEN S.LOSAL(+) AND S.HISAL(+)
+    AND E.MGR = E2.EMPNO(+)
+ORDER BY E.DEPTNO, E.EMPNO;
