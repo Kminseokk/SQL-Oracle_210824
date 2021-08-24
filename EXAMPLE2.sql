@@ -1,0 +1,6 @@
+--부서정보와 사원정보를 부서번호, 사원 이름순으로 정렬하여 출력해보세요
+
+SELECT D.DEPTNO, D.DNAME, E.EMPNO, E.ENAME, E.JOB, E.SAL
+FROM DEPT D, EMP E
+WHERE D.DEPTNO = E. DEPTNO(+)
+ORDER BY D.DEPTNO, D.DNAME, E.ENAME;
